@@ -1,0 +1,31 @@
+{
+  "name": "Order approval",
+  "start_step": "received",
+  "steps": [
+    {
+      "id": "received",
+      "name": "Receive request",
+      "duration_minutes": 2,
+      "next_steps": ["check"]
+    },
+    {
+      "id": "check",
+      "name": "Check required information",
+      "duration_minutes": 5,
+      "next_steps": ["approve", "request_changes"]
+    },
+    {
+      "id": "approve",
+      "name": "Approve request",
+      "duration_minutes": 3,
+      "next_steps": []
+    },
+    {
+      "id": "request_changes",
+      "name": "Request missing information",
+      "duration_minutes": 4,
+      "next_steps": ["check"]
+    }
+  ],
+  "sample_path": ["received", "check", "approve"]
+}

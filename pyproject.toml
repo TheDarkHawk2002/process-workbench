@@ -1,0 +1,18 @@
+[project]
+name = "process-workbench"
+version = "0.1.0"
+description = "Validate and summarize small process workflows from JSON"
+requires-python = ">=3.11"
+
+[project.scripts]
+process-workbench = "process_workbench.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
